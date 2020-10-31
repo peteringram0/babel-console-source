@@ -25,7 +25,7 @@ module.exports = () => {
                         file = segs.join('/');
                     }
 
-                    let wrapperChars = ["", ""]
+                    let wrapperChars = ['', '']
                     if(typeof opts.wrapperChars === "string" && opts.wrapperChars.length === 2) {
                         wrapperChars = opts.wrapperChars;
                     }
