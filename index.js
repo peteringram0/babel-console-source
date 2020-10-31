@@ -25,7 +25,12 @@ module.exports = () => {
                         file = segs.join('/');
                     }
 
-                    let value = `${file} (${path.node.loc.start.line}:${path.node.loc.start.column})`
+                    let wrapperChars = ["", ""]
+                    if(typeof opts.wrapperChars === "string" && opts.wrapperChars.length === 2) {
+                        wrapperChars = opts.wrapperChars;
+                    }
+
+                    let value = `${wrapperChars[0]}${file} (${path.node.loc.start.line}:${path.node.loc.start.column})${wrapperChars[1]}`
 
                     if(path.node.arguments[0].value !== value) {
                         path.node.arguments.unshift({
